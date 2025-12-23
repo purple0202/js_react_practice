@@ -22,7 +22,7 @@
     // const btn = React.createElement("button", {
     //     onClick: () => {console.log("I am clicked!")}
     // }, "Click me!");
-    const Container = <div><Title /> <Btn /></div>
-    ReactDOM.render(Container, root);
+    const Container =() => (<div><Title /> <Btn /></div>);
+    ReactDOM.render(<Container />, root);
 </script>
 </html>
