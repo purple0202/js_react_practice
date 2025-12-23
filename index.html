@@ -7,10 +7,10 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root");
-    const title = (<h3 id="title" style={{color: "purple"}} onMouseEnter={() => {console.log("Mouse Entered!")}}>
+    const Title = () => (<h3 id="title" style={{color: "purple"}} onMouseEnter={() => {console.log("Mouse Entered!")}}>
         Hello I'm a title
         </h3>);
-    const btn = (<button style={{backgroundColor:"purple"}}
+    const Btn = () => (<button style={{backgroundColor:"purple"}}
         onClick={() => {console.log("I am clicked!")}}
         >Click Me!
         </button>);
@@ -22,7 +22,7 @@
     // const btn = React.createElement("button", {
     //     onClick: () => {console.log("I am clicked!")}
     // }, "Click me!");
-    const container = React.createElement("div", null, [title, btn])
-    ReactDOM.render(container, root);
+    const Container = <div><Title /> <Btn /></div>
+    ReactDOM.render(Container, root);
 </script>
 </html>
