@@ -7,13 +7,13 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root");
-    const Title = () => (<h3 id="title" style={{color: "purple"}} onMouseEnter={() => {console.log("Mouse Entered!")}}>
-        Hello I'm a title
-        </h3>);
-    const Btn = () => (<button style={{backgroundColor:"purple"}}
-        onClick={() => {console.log("I am clicked!")}}
-        >Click Me!
-        </button>);
+    // const Title = () => (<h3 id="title" style={{color: "purple"}} onMouseEnter={() => {console.log("Mouse Entered!")}}>
+    //     Hello I'm a title
+    //     </h3>);
+    // const Btn = () => (<button style={{backgroundColor:"purple"}}
+    //     onClick={() => {console.log("I am clicked!")}}
+    //     >Click Me!
+    //     </button>);
     // const span = React.createElement("h3", {
     //     onMouseEnter: () => {console.log("Mouse Entered!")},
     //     id: "sexy-span", style: {color: "purple"}}, "Hello I'm a span"
@@ -22,7 +22,18 @@
     // const btn = React.createElement("button", {
     //     onClick: () => {console.log("I am clicked!")}
     // }, "Click me!");
-    const Container =() => (<div><Title /> <Btn /></div>);
-    ReactDOM.render(<Container />, root);
+    let counter = 0;
+    function countUP() {
+        counter = counter + 1;
+        render();
+    }
+    function render() {
+        ReactDOM.render(<Container />, root);
+    }
+    const Container =() => (<div>
+        <h3>Total clicks: {counter}</h3>
+        <button onClick={countUP}>Click me</button>
+        </div>);
+    render();
 </script>
 </html>
