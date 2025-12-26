@@ -28,12 +28,16 @@
         render();
     }
     function render() {
-        ReactDOM.render(<Container />, root);
+        
     }
-    const Container =() => (<div>
-        <h3>Total clicks: {counter}</h3>
-        <button onClick={countUP}>Click me</button>
+    function Container() {
+        const [counter, modifier] = React.useState(0);
+        console.log([counter, modifier]);    
+        return (<div>
+        <h3>Total clicks: 0</h3>
+        <button>Click me</button>
         </div>);
-    render();
+    }
+    ReactDOM.render(<Container />, root);
 </script>
 </html>
