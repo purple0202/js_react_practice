@@ -31,11 +31,14 @@
         
     }
     function Container() {
-        const [counter, modifier] = React.useState(0);
+        let [counter, modifier] = React.useState(0);
+        const onClick = () => {
+            modifier(counter + 1);
+        }
         console.log([counter, modifier]);    
         return (<div>
-        <h3>Total clicks: 0</h3>
-        <button>Click me</button>
+        <h3>Total clicks: {counter}</h3>
+        <button onClick={onClick}>Click me</button>
         </div>);
     }
     ReactDOM.render(<Container />, root);
